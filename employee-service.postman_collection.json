@@ -1,0 +1,100 @@
+{
+  "info": {
+    "_postman_id": "employee-service-collection-2025",
+    "name": "Employee Service API",
+    "description": "Colección para probar los endpoints del microservicio employee-service.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Obtener todos los empleados",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Basic dXNlcjpwYXNzd29yZA==", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Obtener empleado por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Basic dXNlcjpwYXNzd29yZA==", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    },
+    {
+      "name": "Crear empleado",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" },
+          { "key": "Authorization", "value": "Basic dXNlcjpwYXNzd29yZA==", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Juan Perez\",\n  \"email\": \"juan.perez@empresa.com\",\n  \"position\": \"Desarrollador\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar empleado",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json", "type": "text" },
+          { "key": "Authorization", "value": "Basic dXNlcjpwYXNzd29yZA==", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Juan Perez Modificado\",\n  \"email\": \"juan.perez@empresa.com\",\n  \"position\": \"Líder Técnico\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar empleado",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Basic dXNlcjpwYXNzd29yZA==", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    }
+  ]
+}
