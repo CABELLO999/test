@@ -1,0 +1,10 @@
+# Configuracion de rutas para Spring Cloud Gateway
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/employees/**

@@ -1,0 +1,13 @@
+# docker-compose para levantar ambos microservicios
+version: '3.8'
+services:
+  employee-service:
+    build: ./employee-service
+    ports:
+      - "8080:8080"
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - employee-service
